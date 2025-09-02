@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZIP Code Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Check Your ZIP Code</h2>
+  <p>Enter your ZIP code to see if you're in our service area.</p>
+  <input type="text" id="zipInput" placeholder="e.g. 90210" maxlength="5">
+  <br>
+  <button onclick="checkZip()">Check</button>
+  <div id="result"></div>
+
+  <script>
+    const allowedZips = ["10001", "90210", "30301", "60601", "73301", "33101", "19104", "85001", "02101", "44101"];
+
+    function checkZip() {
+      const input = document.getElementById('zipInput').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if (!/^\d{5}$/.test(input)) {
+        resultDiv.textContent = "Please enter a valid 5-digit ZIP code.";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      if (allowedZips.includes(input)) {
+        resultDiv.textContent = "✅ Yes! We serve your ZIP code.";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "❌ Sorry, we don’t serve that ZIP code.";
+        resultDiv.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
