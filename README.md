@@ -1,2 +1,2 @@
 # zip-code-checker
-A simple page that returns whether a zip code is in a list of zip codes
+A simple page that returns whether a zip code is in a list of zip codes for BCC charity tracker.
