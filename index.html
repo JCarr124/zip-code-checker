@@ -43,7 +43,7 @@
       }
 
       if (allowedZips.includes(input)) {
-        resultDiv.textContent = "✅ Yes! We serve your ZIP code. Please go back to the Kiosk and begin filling out your info!";
+        resultDiv.innerHTML = "✅ Yes! We serve your ZIP code. Please <a href='https://burkecommunity.charitytracker.net/kiosk/608a60e85169d835b979c98d6f06774ad1eb74a7d77a698be31ee112b2d67b0b/' target='_blank'>go back to the Kiosk</a> and begin filling out your info!";
         resultDiv.style.color = "green";
       } else {
         resultDiv.textContent = "❌ Sorry, we don’t serve that ZIP code. If you haven't already, we recommend reaching out to the social services in your local jurisdiction.";
